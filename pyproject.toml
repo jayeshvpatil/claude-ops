@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "token-map"
+version = "0.1.0"
+description = "Visual token cost tracker for Claude Code development sessions"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.1",
+    "rich>=13.7",
+    "opentelemetry-sdk>=1.23",
+    "opentelemetry-proto>=1.23",
+    "grpcio>=1.60",
+    "protobuf>=4.25",
+]
+
+[project.scripts]
+token-map = "token_map.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["token_map*"]
